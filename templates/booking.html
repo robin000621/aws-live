@@ -103,14 +103,23 @@
                     <a href="about.html" class="nav-item nav-link">About</a>
                     <a href="service.html" class="nav-item nav-link">Service</a>
                     <a href="price.html" class="nav-item nav-link">Price</a>
-                    <a href="booking.html" class="nav-item nav-link active">Booking</a>
+                    <a href="booking.html" class="nav-item nav-link">Booking</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                        <a href="#" class="nav-link active dropdown-toggle" data-toggle="dropdown">Employee Management</a>
                         <div class="dropdown-menu rounded-0 m-0">
-                            <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                            <a href="single.html" class="dropdown-item">Blog Detail</a>
+                            <a href="{{ url_for('Add')}}" class="dropdown-item">Add Employee</a>
+                            <a href="single.html" class="dropdown-item">Delete Employee</a>
+                            <a href="single.html" class="dropdown-item">Update Employee</a>
                         </div>
                     </div>
+                    <div class="nav-item dropdown">
+                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">HR Management</a>
+                     <div class="dropdown-menu rounded-0 m-0">
+                         <a href="blog.html" class="dropdown-item">Add Payscale</a>
+                         <a href="single.html" class="dropdown-item">Delete Payscale</a>
+                         <a href="single.html" class="dropdown-item">Update Payscale</a>
+                     </div>
+                 </div>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
                 <a href="" class="btn btn-lg btn-primary px-3 d-none d-lg-block">Get Quote</a>
@@ -137,13 +146,13 @@
                                 <input type="text" class="form-control border-0 p-4" placeholder="Last Name" required="required" name="last_name" />
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control border-0 p-4" placeholder="Primary Skil" required="required" name="pri_skill" />
+                                <input type="text" class="form-control border-0 p-4" placeholder="Primary Skill" required="required" name="pri_skill" />
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control border-0 p-4" placeholder="Location" required="required" name="location" />
                             </div>
                             <div>
-                                <input type=file name="emp_image_file" style="height:25px;font-size:14pt;color:grey;">
+                                <input type=file name="emp_image_file" style="height:25px;font-size:10pt;color:grey;">
                             </div>
                             <div>
                                 <button class="btn btn-dark btn-block border-0 py-3" type="submit">Add Employee</button>
