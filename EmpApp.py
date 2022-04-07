@@ -25,10 +25,12 @@ table = 'employee'
 def home():
     return render_template('index.html')
 
-    @app.route("/del")
+    
+@app.route("/del")
     def Delete():
     return render_template("deleteEmployee.html")
 
+    
 @app.route("/add")
 def Add():
     return render_template('addEmployee.html')    
