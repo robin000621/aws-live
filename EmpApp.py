@@ -65,6 +65,36 @@ def getDataDeleteEmployee():
     cursor.close()
     return render_template('DelEmpOutput.html', id = emp_id)
 
+@app.route("/getdataemp", methods=['POST'])
+def getDataEmp():
+    emp_id = request.form['emp_id']
+
+    rtr_sql = "SELECT * FROM employee WHERE emp_id =%s"
+    cursor = db_conn.cursor()
+    cursor.execute(rtr_sql,(emp_id))
+    db_conn.commit()
+    user = cursor.fetchone
+    cursor.close()
+
+    return render_template('EditEmp.html', user = user)
+
+@app.route("/editemp",methods=['POST'])
+def UpdateEmp():
+    emp_id = request.form['emp_id']
+    first_name = request.form["first_name"]
+    last_name = request.form['last_name']
+    pri_skill = request.form['pri_skill']
+    location = request.form['location']
+
+    rtr_sql = "UPDATE employee SET first_name=%s,last_name=%s,pri_skill=%s,location=%s WHERE emp_id =%s"
+    cursor = db_conn.cursor()
+    cursor.execute(rtr_sql,(first_name,last_name,pri_skill,location,emp_id))
+    db_conn.commit()
+    user = cursor.fetchone()
+    cursor.close()
+
+    return render_template('EditEmpOutput.html', id = emp_id)
+
 
 
 @app.route("/addemp", methods=['POST'])
