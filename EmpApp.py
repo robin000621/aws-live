@@ -30,6 +30,10 @@ def home():
 def Delete():
     return render_template("deleteEmployee.html")
 
+@app.route("/edit")
+def Edit():
+    return render_template("EditEmp.html")    
+
 
 @app.route("/add")
 def Add():
