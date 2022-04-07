@@ -54,7 +54,7 @@ def getData():
     return render_template('GetEmpOutput.html', user = user)
 
 @app.route("delemp", methods=['POST'])
- def getDataDeleteEmployee();
+def getDataDeleteEmployee();
     emp_id = request.form['emp_id']
 
     rtr_sql = "DELETE FROM employee WHERE emp_id = %s"
