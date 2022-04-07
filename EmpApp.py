@@ -25,6 +25,10 @@ table = 'employee'
 def home():
     return render_template('index.html')
 
+    @app.route("/del")
+    def Delete();
+    return render_template("deleteEmployee.html")
+
 @app.route("/add")
 def Add():
     return render_template('addEmployee.html')    
@@ -33,6 +37,32 @@ def Add():
 @app.route("/about", methods=['POST'])
 def about():
     return render_template('www.intellipaat.com')
+
+
+@app.route("getdata",methods=['POST'])
+def getData():
+    emp_id = request.form['emp_id']
+
+    rtr_sql = "SELECT * FROM employee WHERE emp_id = %s"
+    cursor = db_conn.cursor()
+    cursor.execute(rtr_sql,(emp_id))
+    db_conn.commit()
+    user = cursor.fetchome()
+    cursor.close()
+    return render_template('GetEmpOutput.html', user = user)
+
+@app.route("delemp", methods=['POST'])
+ def getDataDeleteEmployee();
+    emp_id = request.form['emp_id']
+
+    rtr_sql = "DELETE FROM employee WHERE emp_id = %s"
+    cursor = db_conn.cursor()
+    cursor.execute(rtr_sql,(emp_id))
+    db_conn.commit()
+    user = cursor.fetchone()
+    cursor.close()
+    return render_template('DelEmpOutput.html', id = emp_id)
+
 
 
 @app.route("/addemp", methods=['POST'])
