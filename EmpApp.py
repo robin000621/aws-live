@@ -27,7 +27,7 @@ def home():
 
 @app.route("/add")
 def Add():
-    return render_template('AddEmp.html')    
+    return render_template('booking.html')    
 
 
 @app.route("/about", methods=['POST'])
