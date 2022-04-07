@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for
 from pymysql import connections
 import os
 import boto3
@@ -24,6 +24,10 @@ table = 'employee'
 @app.route("/", methods=['GET', 'POST'])
 def home():
     return render_template('index.html')
+
+@app.route("/add")
+def Add():
+    return render_template('AddEmp.html')    
 
 
 @app.route("/about", methods=['POST'])
