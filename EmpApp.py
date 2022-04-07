@@ -27,10 +27,10 @@ def home():
 
     
 @app.route("/del")
-    def Delete():
+def Delete():
     return render_template("deleteEmployee.html")
 
-    
+
 @app.route("/add")
 def Add():
     return render_template('addEmployee.html')    
