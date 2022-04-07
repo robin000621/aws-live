@@ -26,7 +26,7 @@ def home():
     return render_template('index.html')
 
     @app.route("/del")
-    def Delete();
+    def Delete():
     return render_template("deleteEmployee.html")
 
 @app.route("/add")
