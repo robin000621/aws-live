@@ -34,6 +34,10 @@ def Delete():
 def Edit():
     return render_template("EditEmp.html")    
 
+@app.route("/show")
+def ViewProfile():
+    return render_template("GetEmpOutput.html")    
+
 
 @app.route("/add")
 def Add():
@@ -80,7 +84,7 @@ def getDataEmp():
     user = cursor.fetchone
     cursor.close()
 
-    return render_template('EditEmp.html', user = user)
+    return render_template('GetEmpOutput.html', user = user)
 
 @app.route("/editemp",methods=['POST'])
 def UpdateEmp():
