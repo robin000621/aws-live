@@ -63,7 +63,7 @@ def getDataDeleteEmployee():
     db_conn.commit()
     user = cursor.fetchone()
     cursor.close()
-    return render_template('DelEmpOutput.html', name = emp_name)
+    return render_template('DelEmpOutput.html', id = emp_id)
 
 
 
