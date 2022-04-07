@@ -41,7 +41,7 @@ def about():
     return render_template('www.intellipaat.com')
 
 
-@app.route("getdata",methods=['POST'])
+@app.route("/getdata",methods=['POST'])
 def getData():
     emp_id = request.form['emp_id']
 
@@ -53,7 +53,7 @@ def getData():
     cursor.close()
     return render_template('GetEmpOutput.html', user = user)
 
-@app.route("delemp", methods=['POST'])
+@app.route("/delemp", methods=['POST'])
 def getDataDeleteEmployee():
     emp_id = request.form['emp_id']
 
