@@ -4,7 +4,7 @@ import os
 import boto3
 from config import *
 
-app = Flask(_name_,template_folder="templates",static_folder= 'templates/static')
+app = Flask(_name_)
 
 bucket = custombucket
 region = customregion
