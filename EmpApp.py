@@ -43,6 +43,10 @@ def ViewProfile():
 def Add():
     return render_template('addEmployee.html')  
 
+@app.route("/editpayroll")
+def editpayroll():
+    return render_template('EditPayroll.html')    
+
 @app.route("/payroll")
 def Payroll():
     return render_template('EmpPayroll.html')    
@@ -141,6 +145,21 @@ def DelPayroll():
     user = cursor.fetchone()
     cursor.close()
     return render_template('DelPayrollOutput.html', id = emp_id)
+
+@app.route("getpayroll", methods=['POST'])
+def getPayroll():
+
+    emp_id = request.form['emp_id']
+
+    rtr_sql = "SELECT * FROM payroll WHERE emp_id =%s"
+    cursor = db_conn.cursor()
+    cursor.execute(rtr_sql,(emp_id))
+    db_conn.commit()
+    payroll = cursor.fetchone()
+    cursor.close()
+
+    return render_template('EditPayroll.html', payroll = payroll)
+
 
 @app.route("/addemp", methods=['POST'])
 def AddEmp():
