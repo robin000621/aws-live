@@ -97,10 +97,12 @@ def UpdateEmp():
     last_name = request.form['last_name']
     pri_skill = request.form['pri_skill']
     location = request.form['location']
+    department = request.form['department']
+    hire_date = request.form['hire_date']
 
-    rtr_sql = "UPDATE employee SET first_name=%s,last_name=%s,pri_skill=%s,location=%s WHERE emp_id =%s"
+    rtr_sql = "UPDATE employee SET first_name=%s,last_name=%s,pri_skill=%s,location=%s,department=%s,hire_date=%s WHERE emp_id =%s"
     cursor = db_conn.cursor()
-    cursor.execute(rtr_sql,(first_name,last_name,pri_skill,location,emp_id))
+    cursor.execute(rtr_sql,(first_name,last_name,pri_skill,location,department,hire_date,emp_id))
     db_conn.commit()
     user = cursor.fetchone()
     cursor.close()
