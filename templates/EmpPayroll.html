@@ -130,7 +130,7 @@
 
     <!-- Booking Start -->
     <div class="container-fluid">
-        <form action="/addemp" autocomplete="on" method = "POST" enctype="multipart/form-data">
+        <form action="/addpayroll" autocomplete="on" method = "POST" enctype="multipart/form-data">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5">
@@ -149,11 +149,12 @@
                                 <textarea style ="height:40px; resize:none;" name="socso" id="socso" class="form-control border-0 p-4">SOSCO</textarea>
                             </div>
                             <div class="form-group">
-                                <textarea style ="height:40px; resize:none;" name="net" id="net" class="form-control border-0 p-4">NET SALARY</textarea>
+                                <textarea style ="height:40px; resize:none;" name="net_salary" id="net_salary" class="form-control border-0 p-4">NET SALARY</textarea>
                             </div>
                             <div>
                                 <input type="button" class="btn btn-dark btn-block border-0 py-3" onClick="calculateBy()" value="Calculate Salary">
                             </div>
+                            <br>
                             <div>
                                 <button class="btn btn-dark btn-block border-0 py-3" type="submit">Add Payroll</button>
                             </div>
@@ -309,7 +310,7 @@
             salary = document.getElementById("salary").value;
             document.getElementById("epf").innerHTML = salary * 14 / 100;
             document.getElementById("socso").innerHTML = salary * 0.5 / 100;
-            document.getElementById("net").innerHTML = salary - (salary * 14 / 100) - (salary * 0.5 / 100);
+            document.getElementById("net_salary").innerHTML = salary - (salary * 14 / 100) - (salary * 0.5 / 100);
         }
     </script>
     <!-- Contact Javascript File -->

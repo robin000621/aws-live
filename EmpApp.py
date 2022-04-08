@@ -107,6 +107,17 @@ def UpdateEmp():
 
     return render_template('EditEmpOutput.html', id = emp_id)
 
+@app.route("/addpayroll", methods=['POST'])
+def AddPayroll():
+    emp_id = request.form['emp_id']
+    salary = request.form['salary']
+    epf = request.form['epf']
+    socso = request.form['socso']
+    net_salary = request.form['net_salary']
+
+    insert_sql = "INSERT INTO payroll VALUES (%d,%d,%d,%d,%d)"
+    cursor = db_conn.cursor()
+
 
 
 @app.route("/addemp", methods=['POST'])
