@@ -45,7 +45,11 @@ def Add():
 
 @app.route("/payroll")
 def Payroll():
-    return render_template('EmpPayroll.html')      
+    return render_template('EmpPayroll.html')    
+
+@app.routr("/delpayroll")
+def delpayroll():
+    return render_template('DelPayroll.html')      
 
 
 @app.route("/about", methods=['POST'])
