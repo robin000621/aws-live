@@ -47,7 +47,7 @@ def Add():
 def Payroll():
     return render_template('EmpPayroll.html')    
 
-@app.routr("/delpayroll")
+@app.route("/delpayroll")
 def delpayroll():
     return render_template('DelPayroll.html')      
 
