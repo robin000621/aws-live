@@ -84,7 +84,7 @@ def getDataEmp():
     user = cursor.fetchone
     cursor.close()
 
-    return render_template('GetEmpOutput.html', user = user)
+    return render_template('EditProfile.html', user = user)
 
 @app.route("/editemp",methods=['POST'])
 def UpdateEmp():
