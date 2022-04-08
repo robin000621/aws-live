@@ -41,7 +41,11 @@ def ViewProfile():
 
 @app.route("/add")
 def Add():
-    return render_template('addEmployee.html')    
+    return render_template('addEmployee.html')  
+
+@app.route("/payroll")
+def Payroll():
+    return render_template('EmpPayroll.html')      
 
 
 @app.route("/about", methods=['POST'])
