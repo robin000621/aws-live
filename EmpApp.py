@@ -126,6 +126,18 @@ def AddPayroll():
 
     return render_template("AddPayrollOutput.html", id = emp_id)
 
+@app.route("/delpayroll", methods = ['POST'])
+def DelPayroll():
+    emp_id = request.form['emp_id']
+
+    rtr_sql = "DELETE FROM payroll WHERE emp_id = %s"
+    cursor = db_conn.cursor()
+    cursor.execute(rtr_sql,(emp_id))
+    db_conn.commit()
+    user = cursor.fetchone()
+    cursor.close()
+    return render_template('DelPayrollOutput.html', id = emp_id)
+
 @app.route("/addemp", methods=['POST'])
 def AddEmp():
     emp_id = request.form['emp_id']
