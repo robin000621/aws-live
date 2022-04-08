@@ -117,6 +117,24 @@ def UpdateEmp():
 
     return render_template('EditEmpOutput.html', id = emp_id)
 
+@app.route("/editpayroll", methods=['POST'])
+def UpdatePayroll():
+    emp_id = request.form['emp_id']
+    salary = request.form['salary']
+    epf = request.form['epf']
+    socso = request.form['socso']
+    net_salary = request.form['net_salary']
+
+    rtr_sql = "UPDATE employee SET salary=%s,epf=%s,socso=%s,net_salary=%s WHERE emp_id =%s"
+    cursor = db_conn.cursor()
+    cursor.execute(rtr_sql,(salary,epf,socso,net_salary,emp_id))
+    db_conn.commit()
+    user = cursor.fetchone()
+    cursor.close()
+
+    return render_template('EditPayrollOutput.html', id = emp_id)
+
+
 @app.route("/addpayroll", methods=['POST'])
 def AddPayroll():
     emp_id = request.form['emp_id']
@@ -158,7 +176,7 @@ def getPayroll():
     payroll = cursor.fetchone()
     cursor.close()
 
-    return render_template('EditPayroll.html', payroll = payroll)
+    return render_template('EditPayrollDetail.html', payroll = payroll)
 
 
 @app.route("/addemp", methods=['POST'])
