@@ -146,7 +146,7 @@ def DelPayroll():
     cursor.close()
     return render_template('DelPayrollOutput.html', id = emp_id)
 
-@app.route("getpayroll", methods=['POST'])
+@app.route("/getpayroll", methods=['POST'])
 def getPayroll():
 
     emp_id = request.form['emp_id']
