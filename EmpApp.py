@@ -117,7 +117,7 @@ def AddPayroll():
     socso = request.form['socso']
     net_salary = request.form['net_salary']
 
-    insert_sql = "INSERT INTO payroll VALUES (%d,%d,%d,%d,%d)"
+    insert_sql = "INSERT INTO payroll VALUES (%s,%s,%s,%s,%s)"
     cursor = db_conn.cursor()
     cursor.execute(insert_sql,(emp_id,salary,epf,socso,net_salary))
     db_conn.commit()
