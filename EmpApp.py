@@ -126,8 +126,6 @@ def AddPayroll():
 
     return render_template("AddPayrollOutput.html", id = emp_id)
 
-
-
 @app.route("/addemp", methods=['POST'])
 def AddEmp():
     emp_id = request.form['emp_id']

@@ -29,6 +29,16 @@
 </head>
 
 <body>
+
+    <script>
+        function calculateBy(){
+            salary = document.getElementById("salary").value;
+            document.getElementById("epf").innerHTML = salary * 14 / 100;
+            document.getElementById("socso").innerHTML = salary * 0.5 / 100;
+            document.getElementById("net_salary").innerHTML = salary - (salary * 14 / 100) - (salary * 0.5 / 100);
+        }
+    </script>
+    
     <!-- Topbar Start -->
     <div class="container-fluid">
         <div class="row bg-secondary py-2 px-lg-5">
@@ -305,14 +315,6 @@
     <script src="static/lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="static/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
-    <script>
-        function calculateBy(){
-            salary = document.getElementById("salary").value;
-            document.getElementById("epf").innerHTML = salary * 14 / 100;
-            document.getElementById("socso").innerHTML = salary * 0.5 / 100;
-            document.getElementById("net_salary").innerHTML = salary - (salary * 14 / 100) - (salary * 0.5 / 100);
-        }
-    </script>
     <!-- Contact Javascript File -->
     <script src="static/mail/jqBootstrapValidation.min.js"></script>
     <script src="static/mail/contact.js"></script>
