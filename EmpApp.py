@@ -125,11 +125,11 @@ def UpdatePayroll():
     socso = request.form['socso']
     net_salary = request.form['net_salary']
 
-    rtr_sql = "UPDATE employee SET salary=%s,epf=%s,socso=%s,net_salary=%s WHERE emp_id =%s"
+    rtr_sql = "UPDATE payroll SET salary=%s,epf=%s,socso=%s,net_salary=%s WHERE emp_id =%s"
     cursor = db_conn.cursor()
     cursor.execute(rtr_sql,(salary,epf,socso,net_salary,emp_id))
     db_conn.commit()
-    user = cursor.fetchone()
+    payroll = cursor.fetchone()
     cursor.close()
 
     return render_template('EditPayrollOutput.html', id = emp_id)
