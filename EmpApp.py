@@ -81,7 +81,7 @@ def getDataEmp():
     cursor = db_conn.cursor()
     cursor.execute(rtr_sql,(emp_id))
     db_conn.commit()
-    user = cursor.fetchone
+    user = cursor.fetchone()
     cursor.close()
 
     return render_template('EditProfile.html', user = user)
