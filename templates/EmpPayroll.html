@@ -140,19 +140,19 @@
                                 <input type="number" class="form-control border-0 p-4" placeholder="Employee ID" required="required" name="emp_id" />
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control border-0 p-4" placeholder="First Name" required="required" name="first_name" />
+                                <input type="number" class="form-control border-0 p-4" placeholder="Salary" required="required" name="first_name" />
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control border-0 p-4" placeholder="Last Name" required="required" name="last_name" />
+                                <input type="number" class="form-control border-0 p-4" placeholder="EPF" required="required" name="last_name" />
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control border-0 p-4" placeholder="Primary Skill" required="required" name="pri_skill" />
+                                <input type="number" class="form-control border-0 p-4" placeholder="SOSCO" required="required" name="pri_skill" />
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control border-0 p-4" placeholder="Location" required="required" name="location" />
+                                <input type="number" class="form-control border-0 p-4" placeholder="Total Salary" required="required" name="location" />
                             </div>
                             <div>
-                                <input type=file name="emp_image_file" style="height:25px;font-size:10pt;color:grey;"> <br><br>
+                                <button class="btn btn-dark btn-block border-0 py-3" type="submit">Calculate</button>
                             </div>
                             <div>
                                 <button class="btn btn-dark btn-block border-0 py-3" type="submit">Add Payroll</button>
@@ -304,6 +304,14 @@
     <script src="static/lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="static/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
+    <script>
+        function calculateBy(){
+            salary = document.getElementById("salary").value;
+            document.getElementById("epf").innerHTML = salary * 14 / 100;
+            document.getElementById("socso").innerHTML = salary * 0.5 / 100;
+            document.getElementById("net").innerHTML = salary - (salary * 14 / 100) - (salary * 0.5 / 100);
+        }
+    </script>
     <!-- Contact Javascript File -->
     <script src="static/mail/jqBootstrapValidation.min.js"></script>
     <script src="static/mail/contact.js"></script>
