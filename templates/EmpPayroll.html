@@ -29,7 +29,6 @@
 </head>
 
 <body>
-
     <script>
         function calculateBy(){
             salary = document.getElementById("salary").value;
@@ -38,7 +37,6 @@
             document.getElementById("net_salary").innerHTML = salary - (salary * 14 / 100) - (salary * 0.5 / 100);
         }
     </script>
-
     <!-- Topbar Start -->
     <div class="container-fluid">
         <div class="row bg-secondary py-2 px-lg-5">
@@ -146,25 +144,19 @@
                 <div class="col-lg-5">
                     <div class="bg-primary py-5 px-4 px-sm-5">
                         <form class="py-5">
-                            
                             <div class="form-group">
-                                Employee ID :
                                 <input type="number" class="form-control border-0 p-4" placeholder="Employee ID" required="required" name="emp_id" />
                             </div>
                             <div class="form-group">
-                                Salary :
-                                <input type="number" class="form-control border-0 p-4" placeholder="Salary" required="required" name="salary" id="salary" />
+                                <input type="number" class="form-control border-0 p-4" placeholder="Salary" required="required" name="first_name" />
                             </div>
                             <div class="form-group">
-                                EPF :
                                 <textarea style ="height:40px; resize:none;" name="epf" id="epf" class="form-control border-0 p-4">EPF</textarea>
                             </div>
                             <div class="form-group">
-                                SOCSO :
                                 <textarea style ="height:40px; resize:none;" name="socso" id="socso" class="form-control border-0 p-4">SOSCO</textarea>
                             </div>
                             <div class="form-group">
-                                Net Salary :
                                 <textarea style ="height:40px; resize:none;" name="net_salary" id="net_salary" class="form-control border-0 p-4">NET SALARY</textarea>
                             </div>
                             <div>
@@ -321,6 +313,7 @@
     <script src="static/lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="static/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
+   
     <!-- Contact Javascript File -->
     <script src="static/mail/jqBootstrapValidation.min.js"></script>
     <script src="static/mail/contact.js"></script>
